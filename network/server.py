@@ -1,11 +1,9 @@
 from scapy.all import ICMP, sniff   
 from cryptography.fernet import Fernet
 
-# Pre-shared symmetric key for decryption
-# Generate a random key
 # KEY = Fernet.generate_key()
 KEY = b'9wJjYLOnzrVmta8tQZC3jWZDvVfVyTMLv_4rD2kEjCw='
-print("Generated Key:", KEY.decode()) # Replace with your key
+
 cipher = Fernet(KEY)
 
 def decrypt_message(encrypted_msg):

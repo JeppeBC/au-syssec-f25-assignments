@@ -2,11 +2,9 @@ from scapy.all import IP, ICMP, send
 from cryptography.fernet import Fernet
 import sys
 
-# Pre-shared symmetric key for encryption
-# Generate a random key
 # KEY = Fernet.generate_key()
 KEY = b'9wJjYLOnzrVmta8tQZC3jWZDvVfVyTMLv_4rD2kEjCw='
-print("Generated Key:", KEY.decode())
+
 cipher = Fernet(KEY)
 
 packet = IP(dst="172.17.130.111")/ICMP(type=47)/"test"
